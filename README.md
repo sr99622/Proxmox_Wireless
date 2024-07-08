@@ -406,5 +406,8 @@ Environment=USER=git HOME=/home/git GITEA_WORK_DIR=/var/lib/gitea
 [Install]
 WantedBy=multi-user.target
 ```
+The server should be started with the command:
+
+    systemctl enable gitea --now
 
 Now launch a web browser tab to the gitea server at port 3000 and you should get an install page. Use the Database option SQLite3 for easiest configuration and click Install. You can now create a user account and you should be good to go.
