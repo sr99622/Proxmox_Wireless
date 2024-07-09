@@ -137,7 +137,7 @@ Save the file and restart the utility with the following command:
 
     sysctl -p
 
-You should receive an acknowledgement that the forwarding variable has been set to 1. The following script will implement packet forwarding on the host. The basic idea is that you are setting up filter and NAT tables that will capture packets on one of the network interfaces and forward them through it's gateway to the other connected network. During the forwarding, the script will translate the addresses from one network to the other, and will masquerade the packet as belonging to the host to the other network, so that the packets are accepted as valid by the receiving network. Edit the file ```/etc/nftables.conf``` to apear as follows:
+You should receive an acknowledgement that the forwarding variable has been set to 1. The following nftables configuration script will implement packet forwarding on the host. The basic idea is that you are setting up filter and NAT tables that will capture packets on one of the network interfaces and forward them through it's gateway to the other connected network. During the forwarding, the script will translate the addresses from one network to the other, and will masquerade the packet as belonging to the host to the other network, so that the packets are accepted as valid by the receiving network. Edit the file ```/etc/nftables.conf``` to appear as follows:
 
 ```
 #!/usr/sbin/nft -f
