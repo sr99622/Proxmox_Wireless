@@ -339,9 +339,9 @@ Now reboot the PVE host and verify that the mount is persistent by navigating to
 
 As you work with Proxmox and start creating virtual machines, you will start building a collection of iso files, which can be quite large. There is a way to integrate them into the PVE from a bulk storage device so that you don't have to dedicate a lot of space from your main drive to house them.
 
-The first step is to assign a directory on the bulk storage in which to house the ISO files. The name of this directory has a specific requirement in that it should end with the path
+The first step is to assign a directory on the bulk storage in which to house the ISO files. The name of this directory has a specific requirement in that it should end with a particular path. Continuing with the hdd example, this path would be
 
-    var/lib/vz/template/iso
+    /mnt/hdd/var/lib/vz/template/iso
 
 This is done so the PVE is able to find the files. Copy the .iso files into this location, then use the Proxmox web interface to go to Datacenter Storage and add a new Directory. Set the ID to iso and the directory to the vz subdirectory created on the bulk storage device created above. Following the example of the SATA HDD presented above, this would be 
 
