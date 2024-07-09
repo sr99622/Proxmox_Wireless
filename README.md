@@ -31,7 +31,7 @@ You will receive a prompt asking if you want to trust the host, say yes. After e
 
 To enable the host wireless connection, use the [Debian package iwd](https://wiki.debian.org/NetworkManager/iwd). This package has a dependency on another package, the Embedded Linux library (libell0). Download the [iwd deb file](https://packages.debian.org/bookworm/iwd) and the [libell0 deb file](https://packages.debian.org/stable/libs/libell0) and copy them to USB. Insert the USB into the host system, mount the USB and install the libell0 deb package first, then the iwd deb package, using the following instructions.
 
-<b><u>Mount USB Drive</u></b>
+<b>Mount USB Drive</b>
 
 Use the command fdisk -l to show drives in the system. You are looking for the USB which will look something like:
 
