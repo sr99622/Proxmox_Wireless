@@ -127,7 +127,7 @@ Upon completion of the wireless configuration, you can update the system by usin
 
 # Packet Forwarding For the Wireless Connection
 
-In order for other devices or virtual machines to be able to communicate to the internet through the wireless connection on the proxmox host, it is necessary to forward packets through the host, similar to the way a router functions. This can be done using [nftables](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) on Linux.
+In order for other devices or virtual machines on the wired subnet to be able to communicate to the internet through the wireless connection on the proxmox host, it is necessary to forward packets through the host, similar to the way a router functions. This can be done using [nftables](https://wiki.nftables.org/wiki-nftables/index.php/Main_Page) on Linux.
 
 The first step is to enable forwarding by editing the ```/etc/sysctl.conf``` file on the proxmox host. Uncomment the following line by deleting that hashmark
 
