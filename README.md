@@ -21,11 +21,6 @@ Using Rufus on Windows is very straightforward, the Rufus download is an executa
 
 Note that Proxmox only supports HDMI video output, so a Display Port output will not work. The host should be connected to an HDMI monitor and a keyboard and mouse during configuration. Plug the USB into the machine and power on, using the appropriate BIOS hot key to select the USB boot option. The setup will ask for timezone questions and such, then will ask for the network configuration. This is the important part. This document assumes that you are setting up a sub net with the Proxmox host. Use the wired connection for the configuration, the wireless network interface will not work, even though it is listed as on option. You will need to know the IP address of your wireless router, in all likelihood, it will be 192.168.1.1. It is suggested that you use 10.1.1.1 for the wired network address of the Proxmox host, so that the IP addresses on the wired subnet are easily disinguishable from other IP address on your wireless home network. Use the 10.1.1.1 address for the wired network gateway and use the wireless router address for the DNS server. Set the password and the system will reboot when the installation is complete. The system will prompt you to remove the installation media during reboot. 
 
-Upon completion of the reboot, you can log into the system as root using the password you set during installation. Update the system by using the apt commands:
-
-    apt update
-    apt upgrade
-
 You will now need another machine (client) to connect to the Proxmox host on its network. This will require a network hub to which both computers may be attached. Use the ethernet port of the client to connect a wire to the hub shared with the host. Set the IP address of the client to something within the subnet range of the host e.g. 10.1.1.2. You will now be able to connect to the host using ssh.
 
     ssh root@10.1.1.1
@@ -124,6 +119,11 @@ At this point, you should be able to ping the WiFi router. If successful, you sh
     ping google.com
 
 If the first command fails, the wireless connection is not working. If first succeeds and the second fails, the WiFi router is not routing your ping out to the internet. If the first two succeed and the third fails, the DNS is not resolving. In this last case, check your ```/etc/resolv.conf``` file has the WiFi router address as the nameserver.
+
+Upon completion of the wireless configuration, you can update the system by using the apt commands:
+
+    apt update
+    apt upgrade
 
 # Packet Forwarding For the Wireless Connection
 
