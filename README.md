@@ -186,7 +186,7 @@ LXC templates are available for download. To view these, use a pve console to ru
 
 Use the Create CT button, set the Hostname and password, then click Next to go to the Template and and use the dropdown box to select the template that was downloaded. The defaults can be accepted for the Disks, CPU and Memory tabs. When you get to the Network Tab, note the name of the network, which will probably be eth0. Set a static IP, such as 10.1.1.3/24 and 10.1.1.1 as the Gateway. On the DNS tab, set the DNS servers to your wireless router as above e.g. 192.168.1.1.
 
-Once the LXC has been created, start the LXC and open the container console to verify the network connections using the ping tests as shown in the wireless configuration instructions above. These commands should succeed with the same results as if they were sent from the host itself. If the host is working properly, but the container does not connect to the internet, there may be an issue with the packet forwarding, oor perhaps the LXC gateway. 
+Once the LXC has been created, start the LXC and open the container console to verify the network connections using the ping tests as shown in the wireless configuration instructions above. These commands should succeed with the same results as if they were sent from the host itself. If the host is working properly, but the container does not connect to the internet, there may be an issue with the packet forwarding or perhaps the LXC gateway. 
 
 <b>Install and Configure DHCP Server</b>
 
